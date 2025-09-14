@@ -1,0 +1,100 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.contenedor {
+    background-color: #333;
+    border-radius: 5px;
+    margin: auto;
+    width: max-content;
+}
+
+.titulo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.contenedor-cartas {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-carta {
+    align-items: center;
+    background-color: #bebebe;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin: 5px;
+    position: relative;
+    width: 100px;
+}
+
+.tapa {
+    background-color: #50ffff;
+    border-radius: 5px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s ease;
+    width: 100%;
+    z-index: 1;
+}
+
+.imagen-carta {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    height: 60px;
+    width: 60px;
+}
+
+.mostrar .tapa {
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.mostrar .imagen-carta {
+    transform: rotateY(0deg);
+}
+
+.iguales {
+    animation: girar 0.3s ease-in;
+}
+
+@keyframes girar {
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contenedor-juego {
+        margin-top: 130px;
+    }
+    
+    .titulo h1 {
+        font-size: 26px;
+    }
+
+    .contenedor-carta {
+        height: 80px;
+        width: 80px;
+    }
+}
